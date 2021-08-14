@@ -7,6 +7,24 @@
 		{{- end -}}
 		<nav class="nav social">
 			<ul class="flat">
+				<!-- dark mode toggle -->
+				<span id = "dark-mode-toggle" style="cursor: pointer;"></span>
+
+				<!-- script that determines if the initial theme should be light or dark -->
+				<script src = "js/toggle.js"></script>
+				<script>
+					// find savedTheme from local storage or from system theme.
+					let toggle = document.getElementById("dark-mode-toggle");
+
+					if(savedTheme === "dark") {
+						toggle.innerHTML = "<i id='mode-icon' data-feather='moon'></i>";
+						darkTheme.disabled = false;
+					} else if(savedTheme === "light") {
+						toggle.innerHTML = "<i id='mode-icon' data-feather='sun'></i>";
+						darkTheme.disabled = true;
+					}
+				</script>
+
 				{{- range $index, $key := .Site.Params.Social -}}
 				<a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
 				{{- end -}}
