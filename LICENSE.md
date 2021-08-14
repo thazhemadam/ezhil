@@ -1,5 +1,6 @@
 The MIT License (MIT)
 
+Copyright (c) 2018 Vivek R
 Copyright (c) 2021 Anant Thazhemadam
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
